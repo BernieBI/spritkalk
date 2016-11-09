@@ -12,15 +12,19 @@ function getData() {
 }
 
 function statusforandring() {
-    var bildeUrl = "https://bilder.vinmonopolet.no/cache/1200x1200-0/";
-    var bildeUrlSlutt = "-1.jpg";
+
     if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 
         var data = xmlhttp.responseText;
         var produkt = data.split("\n");
         for (var i = 0; i < /*produkt.length*/ 50; i++) {
             var info = produkt[i].split(";");
-            document.getElementById("output").innerHTML += "<img scr = \"" + bildeUrl + info[1] + bildeUrlSlutt + "\">" + "Navn:" + info[2] + " Pris:" + info[4] + "<br />";
+
+            var src = "https://bilder.vinmonopolet.no/cache/1200x1200-0/" + info[1] +'-1.jpg',
+                img = document.createElement('img');
+
+            img.src = src;
+            document.getElementById("output").appendChild(img);
         }
     }
 
