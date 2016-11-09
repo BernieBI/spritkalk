@@ -44,7 +44,5 @@ function statusforandring() {
             }
         });
 
-
-
     }
 }
