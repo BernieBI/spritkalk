@@ -1,6 +1,6 @@
 //https://www.vinmonopolet.no/medias/sys_master/products/products/hbc/hb0/8834253127710/produkter.csv
 
-document.getElementById("import").onclick = getData;
+document.getElementById("btn").onclick = getData;
 var xmlhttp
 
 function getData() {
