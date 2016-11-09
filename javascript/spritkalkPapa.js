@@ -23,6 +23,10 @@ function statusforandring() {
             header: true,
             step: function(row) {
                 console.log("Row:", row.data);
+                var src = "https://bilder.vinmonopolet.no/cache/1200x1200-0/" + row.data[0].Varenummer + '-1.jpg',
+                    img = document.createElement('img');
+                img.src = src;
+                document.getElementById("output").appendChild(img);
             },
             complete: function() {
                 console.log("All done!");
