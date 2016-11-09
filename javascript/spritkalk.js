@@ -2,32 +2,27 @@
 
 document.getElementById("btn").onclick = getData;
 
-function getData(){
+function getData() {
 
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = statusforandring;
-  xmlhttp.open("GET", "../resources/produkter.csv", true);
-  xmlhttp.send();
-
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = statusforandring;
+    xmlhttp.open("GET", "../resources/produkter.csv", true);
+    xmlhttp.send();
 }
 
 function statusforandring() {
-
+    //ø = &#216;
+    var bildeUrl = "https://bilder.vinmonopolet.no/cache/1200x1200-0/";
+    var bildeUrlSlutt = "-1.jpg";
     if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 
         var data = xmlhttp.responseText;
         var produkt = data.split("\n");
-        console.log("started");
-
-        for (var i = 0; i < produkt.length; i++) {
-
+        for (var i = 0; i < /*produkt.length*/ 50; i++) {
             var info = produkt[i].split(";");
-
-            document.getElementById("output").innerHTML += "Navn:" + info[2] + " Pris:" + info[4] + "<br />";
-
-
-
+            document.getElementById("output").innerHTML += "<img scr =" + "https://bilder.vinmonopolet.no/cache/1200x1200-0/9955601-1.jpg" + /* info[0] + bildeUrlSlutt +*/ ">" + "Navn:" + info[2] + " Pris:" + info[4] + "<br />";
         }
-        console.log("finished");
     }
+
+    console.log("finished");
 }
