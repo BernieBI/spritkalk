@@ -1,13 +1,15 @@
 //https://www.vinmonopolet.no/medias/sys_master/products/products/hbc/hb0/8834253127710/produkter.csv
 
+document.getElementById("btn").onclick = getData;
 
+function getData(){
 
-xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = statusforandring;
-xmlhttp.open("GET", "https://www.vinmonopolet.no/medias/sys_master/products/products/hbc/hb0/8834253127710/produkter.csv", true);
-xmlhttp.send();
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = statusforandring;
+  xmlhttp.open("GET", "../resources/produkter.csv", true);
+  xmlhttp.send();
 
-
+}
 
 function statusforandring() {
 
@@ -15,16 +17,17 @@ function statusforandring() {
 
         var data = xmlhttp.responseText;
         var produkt = data.split("\n");
-
+        console.log("started");
 
         for (var i = 0; i < produkt.length; i++) {
 
             var info = produkt[i].split(";");
 
-            document.getElementById("output").innerHTML +="Navn:" + deler[2] + " Pris:" + deler[4] + "<br />";
+            document.getElementById("output").innerHTML += "Navn:" + info[2] + " Pris:" + info[4] + "<br />";
 
 
 
         }
+        console.log("finished");
     }
 }
