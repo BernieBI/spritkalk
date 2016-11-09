@@ -25,7 +25,7 @@ function statusforandring() {
                 console.log("Row:", row.data);
 
                   produktDiv = document.createElement('div');
-                  produktDiv.class = "produktDiv"; 
+                  produktDiv.className = "produktDiv";
                   produktDiv.id = row.data[0].Varenummer + "div";
                   document.getElementById("output").appendChild(produktDiv);
 
@@ -34,9 +34,9 @@ function statusforandring() {
                 img.src = src;
                 document.getElementById(row.data[0].Varenummer + "div").appendChild(img);
 
-                produktH2 = document.createElement('h2');
-                produktH2.innerHTML =  row.data[0].Varenavn;
-                document.getElementById(row.data[0].Varenummer + "div").appendChild(produktH2);
+                produktH3 = document.createElement('h3');
+                produktH3.innerHTML =  row.data[0].Varenavn;
+                document.getElementById(row.data[0].Varenummer + "div").appendChild(produktH3);
 
             },
             complete: function() {
