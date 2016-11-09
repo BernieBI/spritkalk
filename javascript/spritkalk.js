@@ -20,7 +20,7 @@ function statusforandring() {
         var produkt = data.split("\n");
         for (var i = 0; i < /*produkt.length*/ 50; i++) {
             var info = produkt[i].split(";");
-            document.getElementById("output").innerHTML += "<img scr =" + "https://bilder.vinmonopolet.no/cache/1200x1200-0/9955601-1.jpg" + /* info[0] + bildeUrlSlutt +*/ ">" + "Navn:" + info[2] + " Pris:" + info[4] + "<br />";
+            document.getElementById("output").innerHTML += "<img scr =" + bildeUrl + info[0] + bildeUrlSlutt + ">" + "Navn:" + info[2] + " Pris:" + info[4] + "<br />";
         }
     }
 
