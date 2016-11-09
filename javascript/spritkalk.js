@@ -20,7 +20,7 @@ function statusforandring() {
         var produkt = data.split("\n");
         for (var i = 0; i < /*produkt.length*/ 50; i++) {
             var info = produkt[i].split(";");
-            document.getElementById("output").innerHTML += "<img scr =" + bildeUrl + info[0] + bildeUrlSlutt + ">" + "Navn:" + info[2] + " Pris:" + info[4] + "<br />";
+            document.getElementById("output").innerHTML += "<img scr = \"" + bildeUrl + info[1] + bildeUrlSlutt + "\">" + "Navn:" + info[2] + " Pris:" + info[4] + "<br />";
         }
     }
 
