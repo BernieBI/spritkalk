@@ -1,13 +1,13 @@
 //https://www.vinmonopolet.no/medias/sys_master/products/products/hbc/hb0/8834253127710/produkter.csv
 
-document.getElementById("import").onclick = getData;
+document.getElementById("btn").onclick = getData;
 var xmlhttp
 
 function getData() {
 
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = statusforandring;
-    xmlhttp.open("GET", "https://www.vinmonopolet.no/medias/sys_master/products/products/hbc/hb0/8834253127710/produkter.csv", true);
+    xmlhttp.open("GET", "../resources/produkter.csv", true);
     xmlhttp.send();
 
 }
@@ -19,7 +19,8 @@ function statusforandring() {
         var data = xmlhttp.responseText;
 
         Papa.parse(xmlhttp.responseText, {
-            download: true,
+            worker: true,
+            header: true,
             step: function(row) {
                 console.log("Row:", row.data);
             },

@@ -18,7 +18,7 @@ function statusforandring() {
 
         var data = xmlhttp.responseText;
         var produkt = data.split("\n");
-        for (var i = 0; i < /*produkt.length*/ 50; i++) {
+        for (var i = 0; i < /*produkt.length*/ 10; i++) {
             var info = produkt[i].split(";");
             document.getElementById("output").innerHTML += "<img scr = \"" + bildeUrl + info[1] + bildeUrlSlutt + "\">" + "Navn:" + info[2] + " Pris:" + info[4] + "<br />";
         }
