@@ -9,4 +9,5 @@ img {
 .produktDiv{
   width: 10em;
   outline: solid 1px black;
+  display: inline-block;
 }

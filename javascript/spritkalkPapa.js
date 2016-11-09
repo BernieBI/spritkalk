@@ -35,7 +35,7 @@ function statusforandring() {
 
                     //lager en ny div med id varenummer og legger den til i output div'en
                     produktDiv = document.createElement('div');
-                    produktDiv.class = "produktDiv";
+                    produktDiv.className = "produktDiv";
                     produktDiv.id = row.data[0].Varenummer + "div";
                     document.getElementById("output").appendChild(produktDiv);
 
