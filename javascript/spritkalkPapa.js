@@ -23,10 +23,21 @@ function statusforandring() {
             header: true,
             step: function(row) {
                 console.log("Row:", row.data);
+
+                  produktDiv = document.createElement('div');
+                  produktDiv.class = "produktDiv"; 
+                  produktDiv.id = row.data[0].Varenummer + "div";
+                  document.getElementById("output").appendChild(produktDiv);
+
                 var src = "https://bilder.vinmonopolet.no/cache/1200x1200-0/" + row.data[0].Varenummer + '-1.jpg',
                     img = document.createElement('img');
                 img.src = src;
-                document.getElementById("output").appendChild(img);
+                document.getElementById(row.data[0].Varenummer + "div").appendChild(img);
+
+                produktH2 = document.createElement('h2');
+                produktH2.innerHTML =  row.data[0].Varenavn;
+                document.getElementById(row.data[0].Varenummer + "div").appendChild(produktH2);
+
             },
             complete: function() {
                 console.log("All done!");
