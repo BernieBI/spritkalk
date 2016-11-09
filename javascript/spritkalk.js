@@ -1,10 +1,11 @@
 //https://www.vinmonopolet.no/medias/sys_master/products/products/hbc/hb0/8834253127710/produkter.csv
 
-document.getElementById("btn").onclick = getData;
+document.getElementById("import").onclick = getData;
+var xmlhttp
 
 function getData(){
 
-  var xmlhttp = new XMLHttpRequest();
+  xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = statusforandring;
   xmlhttp.open("GET", "../resources/produkter.csv", true);
   xmlhttp.send();
