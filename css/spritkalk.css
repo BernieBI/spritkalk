@@ -1,0 +1,114 @@
+* {
+    /*outline-style: solid;
+    outline-color: black;
+    */
+    font-family: sans-serif;
+}
+
+html {
+    background-color: lightgrey;
+}
+
+#mainheader {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    font-size: 3em;
+    text-transform: uppercase;
+    color: black;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.5em;
+    color: black;
+}
+
+.valgtboks {
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+    color: white;
+    background-color: grey;
+}
+
+.eventUt {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mainsection {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.undersection {
+    width: 50%;
+    min-width: 40em;
+    outline: solid black 0.2px;
+    padding-bottom: 1em;
+}
+
+.personliste {
+    display: inline-block;
+    outline: solid black 0.2px;
+    text-indent: 1em;
+    width: 100%;
+    background: white;
+    height: 2em;
+    padding-top: 1em;
+}
+
+.activeEventblokk, .nonActiveEventblokk {
+    outline: solid black 0.2px;
+    width: 15em;
+    height: 10em;
+    text-align: center;
+    background-color: #80ff80;
+    filter: grayscale(20%);
+    transition: box-shadow 0.2s, opacity 0.3s filter 0.2s;
+}
+
+.nonActiveEventblokk {
+    background-color: grey;
+}
+
+.button {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: box-shadow 0.2s, background-color 0.3s;
+    outline: none;
+}
+
+.button:hover {
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+    background-color: #666666;
+}
+
+.button:active {
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
+    background-color: #555555;
+}
+
+footer {
+    display: flex;
+    color: black;
+    margin: auto;
+    width: 100%;
+    height: 2em;
+    align-items: center;
+    justify-content: center;
+    min-width: 30em;
+}
