@@ -1,210 +1,233 @@
-    img {
-        margin-top: 0.2em;
-        height: 10em;
-        align-self: center;
-    }
+img {
+    margin-top: 0.2em;
+    height: 10em;
+    align-self: center;
+}
 
-    * {
-        font-family: "Source Sans Pro", sans-serif;
-    }
+* {
+    font-family: "Source Sans Pro", sans-serif;
+}
 
-    html {
-        background-color: #e6e6e6;
-    }
+html {
+    background-color: #e6e6e6;
+}
 
-    #output {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-top: 12em;
-        justify-content: center;
-    }
+#output {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 12em;
+    justify-content: center;
+}
 
-    input[type=range] {
-        -webkit-appearance: none;
-        /* Hides the slider so that custom slider can be made */
-        width: 100%;
-        /* Specific width is required for Firefox. */
-        background: transparent;
-        /* Otherwise white in Chrome */
-    }
+input[type=range] {
+    -webkit-appearance: none;
+    /* Hides the slider so that custom slider can be made */
+    width: 100%;
+    /* Specific width is required for Firefox. */
+    background: transparent;
+    /* Otherwise white in Chrome */
+}
 
-    input[type=range]:focus {
-        outline: none;
-        /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
-    }
+input[type=range]:focus {
+    outline: none;
+    /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
 
-    input[type=range]::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        height: 1.2em;
-        width: 0.5em;
-        margin-top: -7.5px;
-        border-radius: 1px;
-        background: #c2b067;
-        cursor: pointer;
-        /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-        /* Add cool effects to your sliders! */
-    }
-    /* All the same stuff for Firefox */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 1.2em;
+    width: 0.5em;
+    margin-top: -7.5px;
+    border-radius: 1px;
+    background: #c2b067;
+    cursor: pointer;
+    /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    /* Add cool effects to your sliders! */
+}
 
-    input[type=range]::-webkit-slider-runnable-track {
-        width: auto;
-        height: 4px;
-        cursor: pointer;
-        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-        background: white;
-        border-radius: 1.3px;
-        border: 0.2px solid #010101;
-    }
 
-    main {
-        display: flex;
-        width: 100%;
-        margin-top: -8px;
-        min-height: 50em;
-    }
+/* All the same stuff for Firefox */
 
-    #filter span {
-        width: 30em;
-        margin-left: 0.5em;
-        margin-right: 0.5em;
-    }
+input[type=range]::-webkit-slider-runnable-track {
+    width: auto;
+    height: 4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: white;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+}
 
-    #filter h2 {
-        width: auto;
-        margin-right: 0.5em;
-        margin-left: 0.2em;
-    }
+main {
+    display: flex;
+    width: 100%;
+    margin-top: -8px;
+    min-height: 50em;
+}
 
-    select {
-        margin: 0em 1em 0em 0.5em;
-    }
+#filter span {
+    width: 30em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
 
-    #filter {
-        margin: auto;
-        margin-top: 4em;
-        display: flex;
-        position: fixed;
-        font-size: 0.9em;
-        flex-direction: row;
-        width: 99%;
-        color: #c2b067;
-        background-color: black;
-        text-transform: uppercase;
-        align-items: center;
-        align-content: center;
-        justify-content: space-around;
-    }
+#filter h2 {
+    width: auto;
+    margin-right: 0.5em;
+    margin-left: 0.2em;
+}
 
-    #filter p {
-        width: auto;
-    }
+select {
+    margin: 0em 1em 0em 0.5em;
+}
 
-    button:focus {
-        outline: 0;
-    }
+#filter {
+    margin: auto;
+    margin-top: 4em;
+    display: flex;
+    position: fixed;
+    font-size: 0.9em;
+    flex-direction: row;
+    width: 99%;
+    color: #c2b067;
+    background-color: black;
+    text-transform: uppercase;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+}
 
-    .undersection {
-        width: 90%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        background-color: #f2f2f2;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
-        margin: 0 auto;
-        margin-bottom: 2em;
-    }
+#filter p {
+    width: auto;
+}
 
-    #mainheader {
-        z-index: 1;
-        position: fixed;
-        display: flex;
-        margin: 0;
-        padding-top: 10px;
-        flex-wrap: nowrap;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        font-size: 1em;
-        font-weight: bold;
-        text-transform: uppercase;
-        min-width: 200px;
-        width: 99%;
-        height: 3em;
-        background-color: #f0f0dc;
-        background-image: url(https://www.vinmonopolet.no/_ui/responsive/theme-vmp/images/vinmonopolet-logo-svart.png);
-        background-repeat: no-repeat;
-    }
+button:focus {
+    outline: 0;
+}
 
-    h1 {
-        margin-top: 0.5em;
-    }
+.undersection {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f2f2f2;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    margin-bottom: 0.1em;
+}
 
-    .produktDiv {
-        font-family: 'Playfair Display', serif;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        flex-grow: 0;
-        width: 20em;
-        max-height: 20em;
-        margin: 1px;
-        border-radius: 1px;
-        outline: 5px auto #f0f0dc;
-        background-color: white;
-        transition: 0.1s;
-        cursor: pointer;
-    }
+#mainheader {
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    margin: 0;
+    padding-top: 10px;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    min-width: 200px;
+    width: 99%;
+    height: 3em;
+    background-color: #f0f0dc;
+    background-image: url(https://www.vinmonopolet.no/_ui/responsive/theme-vmp/images/vinmonopolet-logo-svart.png);
+    background-repeat: no-repeat;
+}
 
-    .produktDiv:hover {
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
-    }
+h1 {
+    margin-top: 0.5em;
+}
 
-    p {
-        margin-left: 2em;
-        margin-bottom: 1em;
-    }
+.produktDiv {
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    flex-grow: 0;
+    width: 20em;
+    max-height: 20em;
+    margin: 1px;
+    border-radius: 1px;
+    outline: 5px auto #f0f0dc;
+    background-color: white;
+    transition: 0.1s;
+    cursor: pointer;
+}
 
-    h3 {
-        margin-left: 0.5em;
-        margin-right: 0.5em;
-    }
+.produktDiv:hover {
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+}
 
-    button {
-        position: fixed;
-        background-color: black;
-        border: none;
-        width: 99%;
-        height: 2em;
-        color: #c2b067;
-        border-radius: 0px 0px 5px 5px;
-        padding: 5px 15px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 1.2em;
-        transition: 0.01s;
-        margin-top: 6.0em;
-        border-top: 1px solid #c2b067;
-    }
+p {
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
 
-    button:hover {
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        background-color: #c2b067;
-        color: black;
-    }
+h3 {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
 
-    footer {
-        border-radius: 0px 0px 5px 5px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 100%;
-        min-width: 200px;
-        color: #c2b067;
-        width: 90%;
-        height: 2em;
-        background-color: black;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
-        margin: 0 auto;
-    }
+button {
+    background-color: black;
+    border: none;
+    height: 2em;
+    color: #c2b067;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: 0.01s;
+    margin-top: 6.0em;
+    border-top: 1px solid #c2b067;
+}
+
+#btn {
+    position: fixed;
+    width: 99%;
+    border-radius: 0px 0px 5px 5px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    width: 90%;
+    height: 3em;
+    margin: auto;
+    background-color: black;
+}
+
+nav button {
+    border-top: 1px solid #c2b067;
+    border-bottom: 1px solid #c2b067;
+    margin: 0;
+}
+
+button:hover {
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: #c2b067;
+    color: black;
+}
+
+footer {
+    border-radius: 0px 0px 5px 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 100%;
+    min-width: 200px;
+    color: #c2b067;
+    width: 90%;
+    height: 2em;
+    background-color: black;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    margin-top: 0.5em;
+}
