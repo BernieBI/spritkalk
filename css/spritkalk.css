@@ -17,7 +17,7 @@ img {
 }
 
 .produktDiv {
-    display: flex;
+    display: block;
     width: 15em;
     height: 15em;
     outline: solid 1px black;
