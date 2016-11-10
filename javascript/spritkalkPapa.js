@@ -49,7 +49,7 @@ function statusforandring() {
                         document.getElementById(row.data[0].Varenummer + "div").appendChild(produktH3);
 
                         produktP = document.createElement('p');
-                        produktP.innerHTML = row.data[0].Alkohol + "% <br />" + "Pris:" + row.data[0].Pris;
+                        produktP.innerHTML = row.data[0].Alkohol + "% <br />" + "Pris:" + row.data[0].Pris + " kr";
                         document.getElementById(row.data[0].Varenummer + "div").appendChild(produktP);
                     }
                 }

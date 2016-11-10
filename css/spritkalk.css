@@ -1,5 +1,7 @@
 img {
-    width: 3em;
+    margin-top: 0.2em;
+    height: 10em;
+    align-self: center;
 }
 
 * {
@@ -17,12 +19,22 @@ img {
 }
 
 .produktDiv {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 15em;
-    height: 15em;
+    height: 20em;
     outline: solid 1px black;
     flex-shrink: 0;
     flex-grow: 0;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+}
+
+p {
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+h3 {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
