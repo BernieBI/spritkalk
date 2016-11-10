@@ -6,6 +6,7 @@ document.getElementById("btn").onclick = search;
 
 document.getElementById("prev").onclick = prevPage;
 document.getElementById("next").onclick = nextPage;
+document.getElementById("output").onclick = createlink;
 
 
 document.getElementById("alkFrom").oninput = displayalk;
@@ -17,6 +18,11 @@ document.getElementById("priceTo").oninput = displayprice;
 displayprice();
 displayalk();
 getData();
+
+function createlink() {
+    var link = "https://www.vinmonopolet.no/p/" + event.target.id;
+    document.location = link;
+}
 
 function getData() {
 
@@ -55,21 +61,21 @@ function statusforandring() {
 
                         produktDiv = document.createElement('div');
                         produktDiv.className = "produktDiv";
-                        produktDiv.id = row.data[0].Varenummer + "div";
+                        produktDiv.id = row.data[0].Varenummer;
                         document.getElementById("output").appendChild(produktDiv);
 
                         var src = "https://bilder.vinmonopolet.no/cache/1200x1200-0/" + row.data[0].Varenummer + '-1.jpg',
                             img = document.createElement('img');
                         img.src = src;
-                        document.getElementById(row.data[0].Varenummer + "div").appendChild(img);
+                        document.getElementById(row.data[0].Varenummer).appendChild(img);
 
                         produktH3 = document.createElement('h3');
                         produktH3.innerHTML = row.data[0].Varenavn;
-                        document.getElementById(row.data[0].Varenummer + "div").appendChild(produktH3);
+                        document.getElementById(row.data[0].Varenummer).appendChild(produktH3);
 
                         produktP = document.createElement('p');
                         produktP.innerHTML = "- Kr " + parseFloat(row.data[0].Pris) + ",- <br />- " + row.data[0].Alkohol + "% Vol. <br />- " + row.data[0].Volum + "l <br /> " + row.data[0].Smak.bold();
-                        document.getElementById(row.data[0].Varenummer + "div").appendChild(produktP);
+                        document.getElementById(row.data[0].Varenummer).appendChild(produktP);
                     } else if (counter >= perPage * (page - 1)) {
                         parser.abort();
                     }
