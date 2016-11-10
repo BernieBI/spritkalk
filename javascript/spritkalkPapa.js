@@ -4,6 +4,9 @@ document.getElementById("btn").onclick = getData;
 document.getElementById("alkFrom").oninput = displayalk;
 document.getElementById("alkTo").oninput = displayalk;
 
+document.getElementById("priceFrom").oninput = displayprice;
+document.getElementById("priceTo").oninput = displayprice;
+
 var xmlhttp
 
 function getData() {
@@ -58,4 +61,14 @@ function displayalk() {
     }
     document.getElementById("alkFromNum").innerHTML = alkfrom + "%";
     document.getElementById("alkToNum").innerHTML = alkto + "%";
+}
+
+function displayprice() {
+    var priceto = document.getElementById("priceTo").value;
+    var pricefrom = document.getElementById("priceFrom").value;
+    if (priceto < pricefrom) {
+        priceto = pricefrom;
+    }
+    document.getElementById("priceFromNum").innerHTML = pricefrom + " kr";
+    document.getElementById("priceToNum").innerHTML = priceto + " kr";
 }
