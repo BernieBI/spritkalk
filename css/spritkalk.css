@@ -18,15 +18,49 @@ img {
     width: 100vh;
 }
 
+.mainsection {
+    padding: 1em 0em 1em 0em;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+    background-color: #d9d9d9;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
+
+#mainheader {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    min-width: 200px;
+    width: 100%;
+    height: auto;
+    background-color: #808080;
+}
+
 .produktDiv {
     display: flex;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 15%;
     flex-direction: column;
-    width: 15em;
-    height: 20em;
-    outline: solid 1px black;
-    flex-shrink: 0;
-    flex-grow: 0;
-    justify-content: flex-start;
+    flex-wrap: nowrap;
+    max-width: 40em;
+    min-width: 15em;
+    border-radius: 5px;
+    outline: 2px auto #cccccc;
+    background-color: white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.produktDiv:hover {
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    font-size: 1.2em;
 }
 
 p {
