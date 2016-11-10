@@ -1,6 +1,7 @@
 img {
     margin-top: 0.2em;
-    height: 10em;
+    max-height: 12em;
+    height: auto;
     align-self: center;
 }
 
@@ -147,10 +148,11 @@ h1 {
     font-family: 'Playfair Display', serif;
     display: flex;
     flex-direction: column;
+    align-content: center;
     flex-wrap: nowrap;
-    flex-grow: 0;
+    justify-content: center;
     width: 20em;
-    max-height: 22em;
+    height: 25em;
     margin: 1px;
     border-radius: 1px;
     outline: 5px auto #f0f0dc;
