@@ -113,6 +113,6 @@ function nextPage() {
 }
 
 function search() {
-    page = 0;
+    page = 1;
     getData();
 }
