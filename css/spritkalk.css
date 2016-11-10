@@ -78,7 +78,8 @@
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
-        min-width: 15em;
+        flex-grow: 0;
+        width: 20em;
         max-height: 20em;
         margin: 1px;
         border-radius: 1px;
