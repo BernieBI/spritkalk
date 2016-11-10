@@ -16,11 +16,65 @@
         justify-content: center;
     }
 
+    input[type=range] {
+        -webkit-appearance: none;
+        /* Hides the slider so that custom slider can be made */
+        width: 100%;
+        /* Specific width is required for Firefox. */
+        background: transparent;
+        /* Otherwise white in Chrome */
+    }
+
+    input[type=range]:focus {
+        outline: none;
+        /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 1.2em;
+        width: 0.5em;
+        margin-top: -7.5px;
+        border-radius: 1px;
+        background: #c2b067;
+        cursor: pointer;
+        /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        /* Add cool effects to your sliders! */
+    }
+    /* All the same stuff for Firefox */
+
+    input[type=range]::-webkit-slider-runnable-track {
+        width: auto;
+        height: 4px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        background: white;
+        border-radius: 1.3px;
+        border: 0.2px solid #010101;
+    }
+
     main {
         display: flex;
         width: 100%;
         margin-top: -8px;
         min-height: 50em;
+    }
+
+    #filter span {
+        width: 30em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    #filter h2 {
+        width: auto;
+        margin-right: 0.5em;
+        margin-left: 0.2em;
+    }
+
+    select {
+        margin: 0em 1em 0em 0.5em;
     }
 
     #filter {
@@ -31,13 +85,16 @@
         font-size: 0.9em;
         flex-direction: row;
         width: 99%;
-        padding-bottom: 1em;
         color: #c2b067;
         background-color: black;
         text-transform: uppercase;
-        align-items: flex-end;
+        align-items: center;
         align-content: center;
         justify-content: space-around;
+    }
+
+    #filter p {
+        width: auto;
     }
 
     button:focus {
@@ -116,7 +173,7 @@
         text-decoration: none;
         font-size: 1.2em;
         transition: 0.01s;
-        margin-top: 7.0em;
+        margin-top: 6.0em;
         border-top: 1px solid #c2b067;
     }
 
