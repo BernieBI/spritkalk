@@ -14,7 +14,7 @@ function getData() {
 
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = statusforandring;
-    xmlhttp.open("GET", "../scripts/getfil.php", true);
+    xmlhttp.open("GET", "../scripts/getfile.php", true);
     xmlhttp.send();
 
     while (document.getElementById("output").firstChild) {
@@ -33,7 +33,7 @@ function statusforandring() {
         var alkfrom = parseFloat(document.getElementById("alkFrom").value);
         var varetype = document.getElementById("varetype").value
 
-        Papa.parse(xmlhttp.responseText, {
+        Papa.parse(data, {
             worker: true,
             header: true,
             step: function(row) {
