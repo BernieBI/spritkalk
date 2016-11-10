@@ -6,7 +6,7 @@ document.getElementById("btn").onclick = search;
 
 document.getElementById("prev").onclick = prevPage;
 document.getElementById("next").onclick = nextPage;
-document.getElementById("output").onclick = createlink;
+//document.getElementById("output").onclick = createlink;
 
 
 document.getElementById("alkFrom").oninput = displayalk;
@@ -18,12 +18,12 @@ document.getElementById("priceTo").oninput = displayprice;
 displayprice();
 displayalk();
 getData();
-
+/*
 function createlink() {
-    var link = "https://www.vinmonopolet.no/p/" + event.target.id;
+    var link = "https://www.vinmonopolet.no/p/" + event.target.;
     document.location = link;
 }
-
+*/
 function getData() {
 
     xmlhttp = new XMLHttpRequest();
@@ -58,7 +58,6 @@ function statusforandring() {
 
                 if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) && alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >= parseFloat(row.data[0].Alkohol) && (varetype === row.data[0].Varetype || varetype === "alle")) {
                     if ((counter >= perPage * (page - 1) && counter < perPage * page)) {
-
                         produktDiv = document.createElement('div');
                         produktDiv.className = "produktDiv";
                         produktDiv.id = row.data[0].Varenummer;
