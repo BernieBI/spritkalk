@@ -27,8 +27,8 @@ function statusforandring() {
     if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 
         var data = xmlhttp.responseText;
-        var priceto = parseFloat(document.getElementById("priceTo").value);
-        var pricefrom = parseFloat(document.getElementById("priceFrom").value);
+        var priceto = parseInt(document.getElementById("priceTo").value);
+        var pricefrom = parseInt(document.getElementById("priceFrom").value);
         var alkto = parseInt(document.getElementById("alkTo").value);
         var alkfrom = parseInt(document.getElementById("alkFrom").value);
 
@@ -55,7 +55,7 @@ function statusforandring() {
                         document.getElementById(row.data[0].Varenummer + "div").appendChild(produktH3);
 
                         produktP = document.createElement('p');
-                        produktP.innerHTML = row.data[0].Alkohol + "% <br />" + "Pris:" + row.data[0].Pris + " kr";
+                        produktP.innerHTML = row.data[0].Alkohol + "% Vol. <br />" + "Kr " + parseFloat(row.data[0].Pris) + ",-";
                         document.getElementById(row.data[0].Varenummer + "div").appendChild(produktP);
                     }
                 }
