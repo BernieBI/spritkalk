@@ -14,32 +14,57 @@
         Sortimentside
     </header>
     <main>
-      <section id ="filter">
-        <p>
-          <h2>Kategori</h2>
-          <select id="varetype">
+        <section id="filter">
+            <p>
+                <h2>Kategori</h2>
+                <select id="varetype">
             <option value="alle">Vis alle</option>
             <option value="Rødvin">Rødvin</option>
             <option value="Hvitvin">Hvitvin</option>
             <option value="Vodka">Vodka</option>
             <option value="Sider">Sider</option>
             <option value="Akevitt">Akevitt</option>
+            <option value="Alkoholfri leskedrikk">Alkoholfri leskedrikk</option>
+            <option value="Alkoholfri most">Alkoholfri most</option>
+            <option value="Alkoholfri musserende drikk">Alkoholfri musserende drikk</option>
+            <option value="Alkoholfri vin">Alkoholfri vin</option>
+            <option value="Brennevin, annet">Brennevin, annet</option>
+            <option value="Brown ale">Brown ale</option>
+            <option value="Champagne extra brut">Champagne extra brut</option>
+            <option value="Champagne, brut">Champagne, brut</option>
+            <option value="Druebrennevin">Druebrennevin</option>
+            <option value="Fruktbrennevin">Fruktbrennevin</option>
+            <option value="Fruktvin">Fruktvin</option>
+            <option value="Gin">Gin</option>
+            <option value="Genever">Genever</option>
+            <option value="Pale ale">Pale ale</option>
+            <option value="India pale ale">India pale ale</option>
+            <option value="Klosterstil">Klosterstil</option>
+            <option value="Madeira">Madeira</option>
+            <option value="Musserende vin">Musserende vin</option>
+            <option value="Perlende vin, hvit">Perlende vin, hvit</option>
+            <option value="Rom">Rom</option>
+            <option value="Sherry">Sherry</option>
+            <option value="Spesial">Spesial</option>
+            <option value="Vodka">Vodka</option>
+            <option value="Whisky">Whisky</option>
+        
           </select>
-          <h2>Alkoholnivå</h2>
-          <span>Fra</span> &nbsp;<input type="range" id="alkFrom" min ="0" max ="60"value="0"><span id="alkFromNum">0</span>
-          <span>Til</span> &nbsp;<input type="range" id="alkTo" min ="0" max ="60" value="60"><span id="alkToNum">0</span>
-        </p>
-        <p>
-          <h2>Pris</h2>
-          <span>Fra</span> &nbsp;<input type="range" id="priceFrom"value="0" min ="0" max ="35000"><span id="priceFromNum">0</span>
-          <span>Til</span> &nbsp;<input type="range" id="priceTo"value="35000" min ="0" max="35000"><span id="priceToNum">0</span>
-        </p>
-      </section>
+                <h2>Alkoholnivå</h2>
+                <span>Fra</span> &nbsp;<input type="range" id="alkFrom" min="0" max="60" value="0"><span id="alkFromNum">0</span>
+                <span>Til</span> &nbsp;<input type="range" id="alkTo" min="0" max="60" value="60"><span id="alkToNum">0</span>
+            </p>
+            <p>
+                <h2>Pris</h2>
+                <span>Fra</span> &nbsp;<input type="range" id="priceFrom" value="0" min="0" max="35000"><span id="priceFromNum">0</span>
+                <span>Til</span> &nbsp;<input type="range" id="priceTo" value="35000" min="0" max="35000"><span id="priceToNum">0</span>
+            </p>
+        </section>
 
-            <button id="btn">SØK</button>
-            <section class="undersection">
-                <div id="output"> </div>
-            </section>
+        <button id="btn">SØK</button>
+        <section class="undersection">
+            <div id="output"> </div>
+        </section>
     </main>
     <footer>Laget av Mats Løvstrand Berntsen Og Jim-Alexander Berger Gundersen</footer>
 </body>
