@@ -15,6 +15,10 @@ function getData() {
     xmlhttp.open("GET", "../resources/produkter.csv", true);
     xmlhttp.send();
 
+    while (document.getElementById("output").firstChild) {
+        document.getElementById("output").removeChild(document.getElementById("output").firstChild);
+    }
+
 }
 
 function statusforandring() {
