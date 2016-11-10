@@ -6,7 +6,7 @@ document.getElementById("btn").onclick = search;
 
 document.getElementById("prev").onclick = prevPage;
 document.getElementById("next").onclick = nextPage;
-//document.getElementById("output").onclick = createlink;
+document.getElementById("output").onclick = createlink;
 
 
 document.getElementById("alkFrom").oninput = displayalk;
@@ -18,12 +18,12 @@ document.getElementById("priceTo").oninput = displayprice;
 displayprice();
 displayalk();
 getData();
-/*
+
 function createlink() {
-    var link = "https://www.vinmonopolet.no/p/" + event.target.;
+    var link = "https://www.vinmonopolet.no/p/" + event.target.className;
     document.location = link;
 }
-*/
+
 function getData() {
 
     xmlhttp = new XMLHttpRequest();
@@ -59,20 +59,24 @@ function statusforandring() {
                 if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) && alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >= parseFloat(row.data[0].Alkohol) && (varetype === row.data[0].Varetype || varetype === "alle")) {
                     if ((counter >= perPage * (page - 1) && counter < perPage * page)) {
                         produktDiv = document.createElement('div');
-                        produktDiv.className = "produktDiv";
+                        produktDiv.className = row.data[0].Varenummer;
                         produktDiv.id = row.data[0].Varenummer;
                         document.getElementById("output").appendChild(produktDiv);
 
                         var src = "https://bilder.vinmonopolet.no/cache/1200x1200-0/" + row.data[0].Varenummer + '-1.jpg',
                             img = document.createElement('img');
                         img.src = src;
+                        img.className = row.data[0].Varenummer;
                         document.getElementById(row.data[0].Varenummer).appendChild(img);
 
                         produktH3 = document.createElement('h3');
                         produktH3.innerHTML = row.data[0].Varenavn;
+                        produktH3.className = row.data[0].Varenavn;
                         document.getElementById(row.data[0].Varenummer).appendChild(produktH3);
 
                         produktP = document.createElement('p');
+                        produktP.className = row.data[0].Varenavn;
+
                         produktP.innerHTML = "- Kr " + parseFloat(row.data[0].Pris) + ",- <br />- " + row.data[0].Alkohol + "% Vol. <br />- " + row.data[0].Volum + "l <br /> " + row.data[0].Smak.bold();
                         document.getElementById(row.data[0].Varenummer).appendChild(produktP);
                     } else if (counter >= perPage * (page - 1)) {
