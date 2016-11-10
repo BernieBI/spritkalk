@@ -48,7 +48,7 @@ function statusforandring() {
 
         Papa.parse(xmlhttp.responseText, {
             header: true,
-            step: function(row,parser) {
+            step: function(row, parser) {
 
                 if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) && alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >= parseFloat(row.data[0].Alkohol) && (varetype === row.data[0].Varetype || varetype === "alle")) {
                     if ((counter >= perPage * (page - 1) && counter < perPage * page)) {
@@ -68,11 +68,10 @@ function statusforandring() {
                         document.getElementById(row.data[0].Varenummer + "div").appendChild(produktH3);
 
                         produktP = document.createElement('p');
-                        produktP.innerHTML = row.data[0].Alkohol + "% Vol. <br />" + "Kr " + parseFloat(row.data[0].Pris) + ",-";
+                        produktP.innerHTML = "- Kr " + parseFloat(row.data[0].Pris) + ",- <br />- " + row.data[0].Alkohol + "% Vol. <br />- " + row.data[0].Volum + "l <br /> " + row.data[0].Smak.bold();
                         document.getElementById(row.data[0].Varenummer + "div").appendChild(produktP);
-                    }
-                    else if(counter >= perPage * (page - 1)){
-                      parser.abort();
+                    } else if (counter >= perPage * (page - 1)) {
+                        parser.abort();
                     }
                     counter++;
                 }
