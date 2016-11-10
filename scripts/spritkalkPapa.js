@@ -35,13 +35,20 @@ function statusforandring() {
         if (varetype == "Rødvin") {
             varetype = "R&#248dvin";
         }
+
+        var counter = 0;
+        var page = 1;
+        var perPage = 20;
+
         Papa.parse(xmlhttp.responseText, {
             worker: true,
             header: true,
             step: function(row) {
                 console.log("Row:", row.data[0].Varetype);
 
-                if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) && alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >= parseFloat(row.data[0].Alkohol) && (varetype === row.data[0].Varetype || varetype === "alle")) {
+                if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) && alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >= parseFloat(row.data[0].Alkohol) && (varetype === row.data[0].Varetype || varetype === "alle") && (counter >= perPage*(page-1) && counter < perPage*page)) {
+                    counter++;
+
                     produktDiv = document.createElement('div');
                     produktDiv.className = "produktDiv";
                     produktDiv.id = row.data[0].Varenummer + "div";
