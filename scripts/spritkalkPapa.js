@@ -54,9 +54,7 @@ function statusforandring() {
                     produktDiv.id = row.data[0].Varenummer + "div";
                     document.getElementById("output").appendChild(produktDiv);
 
-                    //var src = "https://bilder.vinmonopolet.no/cache/1200x1200-0/" + row.data[0].Varenummer + '-1.jpg',
-                    //så vinmonopolet ikke blir sure og fjerner oss haha
-                    var src = "../resources/flaske.png"
+                    var src = "https://bilder.vinmonopolet.no/cache/1200x1200-0/" + row.data[0].Varenummer + '-1.jpg',
                         img = document.createElement('img');
                     img.src = src;
                     document.getElementById(row.data[0].Varenummer + "div").appendChild(img);
