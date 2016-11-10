@@ -32,31 +32,33 @@ function statusforandring() {
         var alkto = parseFloat(document.getElementById("alkTo").value);
         var alkfrom = parseFloat(document.getElementById("alkFrom").value);
         var varetype = document.getElementById("varetype").value
-
+        if (varetype == "Rødvin") {
+            varetype = "R&#248dvin";
+        }
         Papa.parse(xmlhttp.responseText, {
             worker: true,
             header: true,
             step: function(row) {
                 console.log("Row:", row.data[0].Varetype);
 
-                if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) && alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >=parseFloat(row.data[0].Alkohol) && (varetype === row.data[0].Varetype || varetype === "alle")) {
-                        produktDiv = document.createElement('div');
-                        produktDiv.className = "produktDiv";
-                        produktDiv.id = row.data[0].Varenummer + "div";
-                        document.getElementById("output").appendChild(produktDiv);
+                if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) && alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >= parseFloat(row.data[0].Alkohol) && (varetype === row.data[0].Varetype || varetype === "alle")) {
+                    produktDiv = document.createElement('div');
+                    produktDiv.className = "produktDiv";
+                    produktDiv.id = row.data[0].Varenummer + "div";
+                    document.getElementById("output").appendChild(produktDiv);
 
-                        var src = "https://bilder.vinmonopolet.no/cache/1200x1200-0/" + row.data[0].Varenummer + '-1.jpg',
-                            img = document.createElement('img');
-                        img.src = src;
-                        document.getElementById(row.data[0].Varenummer + "div").appendChild(img);
+                    var src = "https://bilder.vinmonopolet.no/cache/1200x1200-0/" + row.data[0].Varenummer + '-1.jpg',
+                        img = document.createElement('img');
+                    img.src = src;
+                    document.getElementById(row.data[0].Varenummer + "div").appendChild(img);
 
-                        produktH3 = document.createElement('h3');
-                        produktH3.innerHTML = row.data[0].Varenavn;
-                        document.getElementById(row.data[0].Varenummer + "div").appendChild(produktH3);
+                    produktH3 = document.createElement('h3');
+                    produktH3.innerHTML = row.data[0].Varenavn;
+                    document.getElementById(row.data[0].Varenummer + "div").appendChild(produktH3);
 
-                        produktP = document.createElement('p');
-                        produktP.innerHTML = row.data[0].Alkohol + "% Vol. <br />" + "Kr " + parseFloat(row.data[0].Pris) + ",-";
-                        document.getElementById(row.data[0].Varenummer + "div").appendChild(produktP);
+                    produktP = document.createElement('p');
+                    produktP.innerHTML = row.data[0].Alkohol + "% Vol. <br />" + "Kr " + parseFloat(row.data[0].Pris) + ",-";
+                    document.getElementById(row.data[0].Varenummer + "div").appendChild(produktP);
                 }
             },
             complete: function() {
