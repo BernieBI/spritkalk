@@ -28,23 +28,13 @@
     }
 
     .undersection {
-        padding: 1em 0em 1em 0em;
         width: 90%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
-        background-color: #d9d9d9;
         margin: 0 auto;
         margin-bottom: 2em;
-    }
-
-    .filterP {
-        border: 1px;
-        width: 10em;
-        height: 5em;
-        border-style: solid;
-        border-color: #c2b067;
     }
 
     #mainheader {
@@ -63,6 +53,7 @@
     }
 
     .produktDiv {
+        font-family: 'Playfair Display', serif;
         display: flex;
         flex-shrink: 1;
         flex-grow: 1;
@@ -71,15 +62,15 @@
         flex-wrap: nowrap;
         max-width: 40em;
         min-width: 15em;
-        border-radius: 5px;
-        outline: 2px auto #cccccc;
+        border-radius: 1px;
+        outline: 5px auto #f0f0dc;
         background-color: white;
         transition: 0.1s;
         cursor: pointer;
     }
 
     .produktDiv:hover {
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+        outline: 15px auto #f0f0dc;
     }
 
     p {
