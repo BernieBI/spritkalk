@@ -29,17 +29,17 @@ function statusforandring() {
         var data = xmlhttp.responseText;
         var priceto = parseFloat(document.getElementById("priceTo").value);
         var pricefrom = parseFloat(document.getElementById("priceFrom").value);
-        var alkto = parseInt(document.getElementById("alkTo").value);
-        var alkfrom = parseInt(document.getElementById("alkFrom").value);
+        var alkto = parseFloat(document.getElementById("alkTo").value);
+        var alkfrom = parseFloat(document.getElementById("alkFrom").value);
+        var varetype = document.getElementById("varetype").value
 
         Papa.parse(xmlhttp.responseText, {
             worker: true,
             header: true,
             step: function(row) {
-                console.log("Row:", row.data);
+                console.log("Row:", row.data[0].Varetype);
 
-                if (pricefrom <= row.data[0].Pris && priceto >= row.data[0].Pris) {
-                    if (alkfrom <= row.data[0].Alkohol && alkto >= row.data[0].Alkohol) {
+                if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) && alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >=parseFloat(row.data[0].Alkohol) && (varetype === row.data[0].Varetype || varetype === "alle")) {
                         produktDiv = document.createElement('div');
                         produktDiv.className = "produktDiv";
                         produktDiv.id = row.data[0].Varenummer + "div";
@@ -57,7 +57,6 @@ function statusforandring() {
                         produktP = document.createElement('p');
                         produktP.innerHTML = row.data[0].Alkohol + "% <br />" + "Pris:" + row.data[0].Pris + " kr";
                         document.getElementById(row.data[0].Varenummer + "div").appendChild(produktP);
-                    }
                 }
             },
             complete: function() {
