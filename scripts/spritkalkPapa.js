@@ -4,8 +4,8 @@ var perPage = 20;
 
 document.getElementById("btn").onclick = getData;
 
-document.getElementById("prev").onclick = nextPage;
-document.getElementById("next").onclick = prevPage;
+document.getElementById("prev").onclick = prevPage;
+document.getElementById("next").onclick = nextPage;
 
 
 document.getElementById("alkFrom").oninput = displayalk;
@@ -16,6 +16,7 @@ document.getElementById("priceTo").oninput = displayprice;
 
 displayprice();
 displayalk();
+getData();
 
 function getData() {
 
@@ -49,28 +50,29 @@ function statusforandring() {
             worker: true,
             header: true,
             step: function(row) {
-                console.log("Row:", row.data[0].Varetype);
 
-                if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) && alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >= parseFloat(row.data[0].Alkohol) && (varetype === row.data[0].Varetype || varetype === "alle") && (counter >= perPage*(page-1) && counter < perPage*page)) {
+                if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) && alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >= parseFloat(row.data[0].Alkohol) && (varetype === row.data[0].Varetype || varetype === "alle")) {
+                    if ((counter >= perPage * (page - 1) && counter < perPage * page)) {
+
+                        produktDiv = document.createElement('div');
+                        produktDiv.className = "produktDiv";
+                        produktDiv.id = row.data[0].Varenummer + "div";
+                        document.getElementById("output").appendChild(produktDiv);
+
+                        var src = "https://bilder.vinmonopolet.no/cache/1200x1200-0/" + row.data[0].Varenummer + '-1.jpg',
+                            img = document.createElement('img');
+                        img.src = src;
+                        document.getElementById(row.data[0].Varenummer + "div").appendChild(img);
+
+                        produktH3 = document.createElement('h3');
+                        produktH3.innerHTML = row.data[0].Varenavn;
+                        document.getElementById(row.data[0].Varenummer + "div").appendChild(produktH3);
+
+                        produktP = document.createElement('p');
+                        produktP.innerHTML = row.data[0].Alkohol + "% Vol. <br />" + "Kr " + parseFloat(row.data[0].Pris) + ",-";
+                        document.getElementById(row.data[0].Varenummer + "div").appendChild(produktP);
+                    }
                     counter++;
-
-                    produktDiv = document.createElement('div');
-                    produktDiv.className = "produktDiv";
-                    produktDiv.id = row.data[0].Varenummer + "div";
-                    document.getElementById("output").appendChild(produktDiv);
-
-                    var src = "https://bilder.vinmonopolet.no/cache/1200x1200-0/" + row.data[0].Varenummer + '-1.jpg',
-                        img = document.createElement('img');
-                    img.src = src;
-                    document.getElementById(row.data[0].Varenummer + "div").appendChild(img);
-
-                    produktH3 = document.createElement('h3');
-                    produktH3.innerHTML = row.data[0].Varenavn;
-                    document.getElementById(row.data[0].Varenummer + "div").appendChild(produktH3);
-
-                    produktP = document.createElement('p');
-                    produktP.innerHTML = row.data[0].Alkohol + "% Vol. <br />" + "Kr " + parseFloat(row.data[0].Pris) + ",-";
-                    document.getElementById(row.data[0].Varenummer + "div").appendChild(produktP);
                 }
             },
             complete: function() {
@@ -96,4 +98,16 @@ function displayprice() {
 
     document.getElementById("priceFromNum").innerHTML = pricefrom + " kr";
     document.getElementById("priceToNum").innerHTML = priceto + " kr";
+}
+
+function prevPage() {
+    if (page != 1) {
+        page--;
+        getData();
+    }
+}
+
+function nextPage() {
+    page++;
+    getData();
 }
