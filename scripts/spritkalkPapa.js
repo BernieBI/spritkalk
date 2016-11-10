@@ -2,7 +2,7 @@
 var page = 1;
 var perPage = 20;
 
-document.getElementById("btn").onclick = getData;
+document.getElementById("btn").onclick = search;
 
 document.getElementById("prev").onclick = prevPage;
 document.getElementById("next").onclick = nextPage;
@@ -109,5 +109,10 @@ function prevPage() {
 
 function nextPage() {
     page++;
+    getData();
+}
+
+function search() {
+    page = 0;
     getData();
 }
