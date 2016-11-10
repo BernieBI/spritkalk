@@ -4,6 +4,7 @@
 <head>
     <title>Oblig 5</title>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/spritkalk.css" />
 </head>
 
@@ -14,19 +15,20 @@
     <main>
         <section class="mainsection">
 
-            <section class="undersection">
+            <section id ="filter">
               <p>
-              <h3>Alkoholnivå</h3>
-              Fra &nbsp;<input type="range" id="alkFrom" value="10"><span id="alkFromNum"></span>
-              <br />
-              Til &nbsp;<input type="range" id="alkTo" value="20"><span id="alkToNum"></span>
-              <h3>Pris</h3>
-              Fra &nbsp;<input type="range" id="priceFrom" min ="14" max ="65000"><span id="priceFromNum"></span>
-              <br />
-              Til &nbsp;<input type="range" id="priceTo" min ="14" max="65000"><span id="priceToNum"></span>
+                <h2>Alkoholnivå</h2>
+              Fra &nbsp;<input type="range" id="alkFrom" value="0"><span id="alkFromNum"></span>
+              Til &nbsp;<input type="range" id="alkTo" value="0"><span id="alkToNum"></span>
+              <p>
               </p>
-                <button id="btn">SØK</button>
+              <h2>Pris</h2>
+              Fra &nbsp;<input type="range" id="priceFrom"value="0" min ="14" max ="65000"><span id="priceFromNum"></span>
+              Til &nbsp;<input type="range" id="priceTo"value="0" min ="14" max="65000"><span id="priceToNum"></span>
+              </p>
             </section>
+
+            <button id="btn">SØK</button>
             <section class="undersection">
                 <div id="output"> </div>
             </section>
