@@ -14,7 +14,7 @@ function getData() {
 
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = statusforandring;
-    xmlhttp.open("GET", "../scripts/getfile.php?start=" + 5 + "stop=" + 25, true);
+    xmlhttp.open("GET", "../scripts/getfile.php", true);
     xmlhttp.send();
 
     while (document.getElementById("output").firstChild) {
