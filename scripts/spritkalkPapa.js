@@ -36,6 +36,7 @@ function getData() {
     }
 
 }
+var treff = false;
 
 function statusforandring() {
     if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
@@ -57,6 +58,7 @@ function statusforandring() {
             step: function(row, parser) {
 
                 if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) && alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >= parseFloat(row.data[0].Alkohol) && (varetype === row.data[0].Varetype || varetype === "alle")) {
+                    treff = true;
                     if ((counter >= perPage * (page - 1) && counter < perPage * page)) {
                         produktDiv = document.createElement('div');
                         produktDiv.className = row.data[0].Varenummer;
@@ -87,6 +89,13 @@ function statusforandring() {
             },
             complete: function() {
                 console.log("All done!");
+                if (treff == false) {
+                    produktDiv = document.createElement('div');
+                    produktDiv.innerHTML = "<h1> Ditt søk ga ingen treff</h1>";
+                    document.getElementById("output").appendChild(produktDiv);
+                    console.log("null resuøtat");
+
+                }
             }
         });
 
@@ -123,6 +132,7 @@ function nextPage() {
 }
 
 function search() {
+    treff = false;
     page = 1;
     getData();
 }
