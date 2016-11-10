@@ -15,16 +15,17 @@
         <section class="mainsection">
 
             <section class="undersection">
-              <p>
-              <h3>Alkoholnivå</h3>
-              Fra &nbsp;<input type="range" id="alkFrom" value="10"><span id="alkFromNum"></span>
-              <br />
-              Til &nbsp;<input type="range" id="alkTo" value="20"><span id="alkToNum"></span>
-              <h3>Pris</h3>
-              Fra &nbsp;<input type="range" id="priceFrom" min ="14" max ="65000"><span id="priceFromNum"></span>
-              <br />
-              Til &nbsp;<input type="range" id="priceTo" min ="14" max="65000"><span id="priceToNum"></span>
-              </p>
+                <p>
+                    <h3>Kategori</h3>
+                    <select>
+                      <option value="alle">Vis alle</option>
+                      <option value="rødvin">Rødvin</option>
+                    </select>
+                    <h3>Alkoholnivå</h3> Fra &nbsp;<input type="range" id="alkFrom" value="10"><span id="alkFromNum"></span>
+                    <br /> Til &nbsp;<input type="range" id="alkTo" value="20"><span id="alkToNum"></span>
+                    <h3>Pris</h3> Fra &nbsp;<input type="range" id="priceFrom" min="14" max="65000"><span id="priceFromNum"></span>
+                    <br /> Til &nbsp;<input type="range" id="priceTo" min="14" max="65000"><span id="priceToNum"></span>
+                </p>
                 <button id="btn">SØK</button>
             </section>
             <section class="undersection">
