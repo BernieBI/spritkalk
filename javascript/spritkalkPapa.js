@@ -36,6 +36,7 @@ function statusforandring() {
         Papa.parse(data, {
             worker: true,
             header: true,
+            encoding: "UTF-8",
             step: function(row) {
                 console.log("Row:", row.data[0].Varetype);
 
