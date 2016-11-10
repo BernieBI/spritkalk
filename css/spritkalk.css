@@ -16,6 +16,7 @@
 
     #filter {
         display: flex;
+        font-size: 0.9em;
         flex-direction: row;
         margin: auto;
         width: 100%;
@@ -23,7 +24,7 @@
         background-color: black;
         text-transform: uppercase;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     .undersection {
@@ -38,12 +39,21 @@
         margin-bottom: 2em;
     }
 
+    .filterP {
+        border: 1px;
+        width: 10em;
+        height: 5em;
+        border-style: solid;
+        border-color: #c2b067;
+    }
+
     #mainheader {
         display: flex;
         flex-wrap: nowrap;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         font-size: 3em;
+        text-transform: uppercase;
         min-width: 200px;
         width: 100%;
         height: auto;
