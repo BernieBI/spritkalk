@@ -7,6 +7,8 @@ document.getElementById("alkTo").oninput = displayalk;
 document.getElementById("priceFrom").oninput = displayprice;
 document.getElementById("priceTo").oninput = displayprice;
 
+displayprice();
+displayalk();
 
 function getData() {
 
