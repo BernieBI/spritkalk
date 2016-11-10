@@ -47,9 +47,8 @@ function statusforandring() {
         var counter = 0;
 
         Papa.parse(xmlhttp.responseText, {
-            worker: true,
             header: true,
-            step: function(row) {
+            step: function(row,parser) {
 
                 if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) && alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >= parseFloat(row.data[0].Alkohol) && (varetype === row.data[0].Varetype || varetype === "alle")) {
                     if ((counter >= perPage * (page - 1) && counter < perPage * page)) {
@@ -71,6 +70,9 @@ function statusforandring() {
                         produktP = document.createElement('p');
                         produktP.innerHTML = row.data[0].Alkohol + "% Vol. <br />" + "Kr " + parseFloat(row.data[0].Pris) + ",-";
                         document.getElementById(row.data[0].Varenummer + "div").appendChild(produktP);
+                    }
+                    else if(counter >= perPage * (page - 1)){
+                      parser.abort();
                     }
                     counter++;
                 }
