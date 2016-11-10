@@ -1,6 +1,13 @@
 //https://www.vinmonopolet.no/medias/sys_master/products/products/hbc/hb0/8834253127710/produkter.csv
+var page = 1;
+var perPage = 20;
 
 document.getElementById("btn").onclick = getData;
+
+document.getElementById("prev").onclick = nextPage;
+document.getElementById("next").onclick = prevPage;
+
+
 document.getElementById("alkFrom").oninput = displayalk;
 document.getElementById("alkTo").oninput = displayalk;
 
@@ -37,8 +44,6 @@ function statusforandring() {
         }
 
         var counter = 0;
-        var page = 1;
-        var perPage = 20;
 
         Papa.parse(xmlhttp.responseText, {
             worker: true,
