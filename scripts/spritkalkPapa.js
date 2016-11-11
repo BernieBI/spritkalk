@@ -73,11 +73,11 @@ function statusforandring() {
 
                         produktH3 = document.createElement('h3');
                         produktH3.innerHTML = row.data[0].Varenavn;
-                        produktH3.className = row.data[0].Varenavn;
+                        produktH3.className = row.data[0].Varenummer;
                         document.getElementById(row.data[0].Varenummer).appendChild(produktH3);
 
                         produktP = document.createElement('p');
-                        produktP.className = row.data[0].Varenavn;
+                        produktP.className = row.data[0].Varenummer;
 
                         produktP.innerHTML = "- Kr " + parseFloat(row.data[0].Pris) + ",- <br />- " + row.data[0].Alkohol + "% Vol. <br />- " + row.data[0].Volum + "l <br /> " + row.data[0].Smak.bold();
                         document.getElementById(row.data[0].Varenummer).appendChild(produktP);
