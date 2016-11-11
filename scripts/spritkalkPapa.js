@@ -79,8 +79,14 @@ function statusforandring() {
                         produktP = document.createElement('p');
                         produktP.className = row.data[0].Varenummer;
 
-                        produktP.innerHTML = "- Kr " + parseFloat(row.data[0].Pris) + ",- <br />- " + row.data[0].Alkohol + "% Vol. <br />- " + row.data[0].Volum + "l <br /> " + row.data[0].Smak.bold();
+                        produktP.innerHTML = "- Kr " + parseFloat(row.data[0].Pris) + ",- <br />- " + row.data[0].Alkohol + "% Vol. <br />- " + row.data[0].Volum + "l";
                         document.getElementById(row.data[0].Varenummer).appendChild(produktP);
+
+                        produktB = document.createElement('b');
+                        produktB.className = row.data[0].Varenummer;
+                        produktB.innerHTML = row.data[0].Smak;
+                        document.getElementById(row.data[0].Varenummer).appendChild(produktB);
+
                     } else if (counter >= perPage * (page - 1)) {
                         parser.abort();
                     }
