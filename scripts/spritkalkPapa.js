@@ -1,6 +1,7 @@
 //https://www.vinmonopolet.no/medias/sys_master/products/products/hbc/hb0/8834253127710/produkter.csv
 var page = 1;
 var perPage = 20;
+var treff = false;
 
 document.getElementById("btn").onclick = search;
 
@@ -36,7 +37,6 @@ function getData() {
     }
 
 }
-var treff = false;
 
 function statusforandring() {
     if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
@@ -89,11 +89,11 @@ function statusforandring() {
             },
             complete: function() {
                 console.log("All done!");
+                document.getElementById("pagecounter").innerHTML = "Side " + page;
                 if (treff == false) {
                     produktDiv = document.createElement('div');
                     produktDiv.innerHTML = "<h1> Ditt søk ga ingen treff</h1>";
                     document.getElementById("output").appendChild(produktDiv);
-                    console.log("null resuøtat");
 
                 }
             }
@@ -123,16 +123,19 @@ function prevPage() {
     if (page != 1) {
         page--;
         getData();
+        document.getElementById("pagecounter").innerHTML = "Side " + page;
     }
 }
 
 function nextPage() {
     page++;
     getData();
+    document.getElementById("pagecounter").innerHTML = "Side " + page;
 }
 
 function search() {
     treff = false;
     page = 1;
     getData();
+    document.getElementById("pagecounter").innerHTML = "Side " + page;
 }

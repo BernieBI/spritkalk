@@ -225,6 +225,10 @@ button:hover {
     color: black;
 }
 
+#pagecounter {
+    color: #c2b067;
+}
+
 footer {
     border-radius: 0px 0px 5px 5px;
     display: flex;
@@ -239,4 +243,7 @@ footer {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
     margin-top: 0.5em;
+}
+
+
 }
