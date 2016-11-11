@@ -13,10 +13,15 @@ html {
     background-color: #e6e6e6;
 }
 
+main {
+    min-width: 100rem;
+}
+
 #output {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    min-width: 100rem;
     margin-top: 12em;
     justify-content: center;
 }
@@ -92,7 +97,7 @@ select {
     flex-direction: row;
     flex-wrap: nowrap;
     width: 99%;
-    min-width: 100em;
+    min-width: 100rem;
     color: #c2b067;
     background-color: black;
     text-transform: uppercase;
@@ -182,7 +187,7 @@ button {
     border: none;
     height: 2em;
     width: 99%;
-    min-width: 75em;
+    min-width: 100rem;
     color: #c2b067;
     padding: 5px 15px;
     text-align: center;
@@ -205,15 +210,16 @@ nav {
     align-items: center;
     align-content: center;
     width: 90%;
-    min-width: 100em;
+    min-width: 100rem;
     height: 3em;
     margin: auto;
     background-color: black;
 }
 
 nav button {
-    border-top: 1px solid #c2b067;
-    border-bottom: 1px solid #c2b067;
+    border-left: 1px solid #c2b067;
+    border-right: 1px solid #c2b067;
+    border-top: none;
     margin: 0;
     width: 10em;
     min-width: 10em;
@@ -235,14 +241,15 @@ footer {
     justify-content: space-around;
     align-items: center;
     font-size: 100%;
-    min-width: 100em;
+    min-width: 100rem;
     color: #c2b067;
     width: 90%;
     height: 2em;
     background-color: black;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #c2b067;
     margin: 0 auto;
-    margin-top: 0.5em;
+    margin-top: 0em;
 }
 
 
