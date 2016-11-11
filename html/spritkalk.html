@@ -12,13 +12,12 @@
 
 <body>
     <header id="mainheader">
-        <h1>Sortimentside</h1>
+        <h1>VARESØK</h1>
     </header>
     <main>
         <section id="filter">
-            <p>
-                <h2>Kategori</h2>
-                <select id="varetype">
+            <h2>Kategori</h2>
+            <select id="varetype">
             <option value="alle">Vis alle</option>
             <option value="Rødvin">Rødvin</option>
             <option value="Hvitvin">Hvitvin</option>
@@ -51,15 +50,12 @@
             <option value="Whisky">Whisky</option>
 
           </select>
-                <h2>Alkoholnivå</h2>
-                <span>Fra</span> &nbsp;<input type="range" id="alkFrom" min="0" max="60" value="0"><span id="alkFromNum">0</span>
-                <span>Til</span> &nbsp;<input type="range" id="alkTo" min="0" max="60" value="60"><span id="alkToNum">0</span>
-            </p>
-            <p>
-                <h2>Pris</h2>
-                <span>Fra</span> &nbsp;<input type="range" id="priceFrom" value="0" min="0" max="35000"><span id="priceFromNum">0</span>
-                <span>Til</span> &nbsp;<input type="range" id="priceTo" value="35000" min="0" max="35000"><span id="priceToNum">0</span>
-            </p>
+            <h2>Alkoholnivå</h2>
+            <span class="filtertext">Fra</span> &nbsp;<input type="range" id="alkFrom" min="0" max="60" value="0"><span class="filtertext" id="alkFromNum">0</span>
+            <span class="filtertext">Til</span> &nbsp;<input type="range" id="alkTo" min="0" max="60" value="60"><span class="filtertext" id="alkToNum">0</span>
+            <h2>Pris</h2>
+            <span class="filtertext">Fra</span> &nbsp;<input type="range" id="priceFrom" value="0" min="0" max="35000"><span class="filtertext" id="priceFromNum">0</span>
+            <span class="filtertext">Til</span> &nbsp;<input type="range" id="priceTo" value="35000" min="0" max="35000"><span class="filtertext" id="priceToNum">0</span>
         </section>
 
         <button id="btn">SØK</button>
