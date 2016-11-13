@@ -26,6 +26,20 @@ main {
     justify-content: center;
 }
 
+#spinner {
+    color: #c2b067;
+    animation: loading 1.5s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 #treffut {
     display: flex;
     margin-top: 9em;
@@ -42,16 +56,16 @@ main {
     border-radius: 5px 5px 5px 5px;
 }
 
-
-}
 input[type=range] {
     -webkit-appearance: none;
     width: 100%;
     background: transparent;
 }
+
 input[type=range]:focus {
     outline: none;
 }
+
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 1.2em;
@@ -63,7 +77,6 @@ input[type=range]::-webkit-slider-thumb {
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 
-/* All the same stuff for Firefox */
 input[type=range]::-webkit-slider-runnable-track {
     width: auto;
     max-width: 30em;
@@ -77,26 +90,31 @@ input[type=range]::-webkit-slider-runnable-track {
     border-radius: 1.3px;
     border: 0.2px solid #010101;
 }
+
 main {
     display: flex;
     width: 100%;
     margin-top: -8px;
     min-height: 50em;
 }
+
 .filtertext {
     display: inline-block;
     min-width: 55px;
     width: auto;
     float: left;
 }
+
 #filter h2 {
     width: auto;
     margin-right: 0.5em;
     margin-left: 0.2em;
 }
+
 select {
     margin: 0em 1em 0em 0.5em;
 }
+
 #filter {
     margin: auto;
     margin-top: 4em;
@@ -114,9 +132,11 @@ select {
     align-content: center;
     justify-content: space-around;
 }
+
 button:focus {
     outline: 0;
 }
+
 .undersection {
     width: 90%;
     display: flex;
@@ -128,6 +148,7 @@ button:focus {
     margin: 0 auto;
     margin-bottom: 0.1em;
 }
+
 #mainheader {
     z-index: 1;
     position: fixed;
@@ -148,9 +169,11 @@ button:focus {
     background-image: url(https://www.vinmonopolet.no/_ui/responsive/theme-vmp/images/vinmonopolet-logo-svart.png);
     background-repeat: no-repeat;
 }
+
 h1 {
     margin-top: 0.5em;
 }
+
 div {
     font-family: 'Playfair Display', serif;
     display: flex;
@@ -167,24 +190,30 @@ div {
     transition: 0.1s;
     cursor: pointer;
 }
+
 div:hover {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
 }
+
 div h1 {
     align-self: center;
     margin-left: 1em;
 }
+
 p {
     margin-left: 1.5em;
 }
+
 b {
     margin-left: 1.5em;
 }
+
 h3 {
     margin-left: 0.5em;
     margin-right: 0.5em;
     margin-bottom: -0.5em;
 }
+
 button {
     background-color: black;
     border: none;
@@ -200,11 +229,13 @@ button {
     margin-top: 5.95em;
     border-top: 1px solid #c2b067;
 }
+
 #btn {
     position: fixed;
     width: 99%;
     border-radius: 0px 0px 5px 5px;
 }
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -216,6 +247,7 @@ nav {
     margin: auto;
     background-color: black;
 }
+
 nav button {
     border-left: 1px solid #c2b067;
     border-right: 1px solid #c2b067;
@@ -224,14 +256,17 @@ nav button {
     width: 10em;
     min-width: 10em;
 }
+
 button:hover {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     background-color: #c2b067;
     color: black;
 }
+
 #pagecounter {
     color: #c2b067;
 }
+
 footer {
     border-radius: 0px 0px 5px 5px;
     display: flex;

@@ -133,7 +133,7 @@ function prevPage() {
     if (page != 1) {
         page--;
         getData();
-        document.getElementById("treffut").innerHTML = "Vennligst vent, siden laster";
+        loading();
         document.getElementById("pagecounter").innerHTML = "Side " + page;
     }
 }
@@ -142,7 +142,7 @@ function nextPage() {
     if (page < totalPage) {
         page++;
         getData();
-        document.getElementById("treffut").innerHTML = "Vennligst vent, siden laster";
+        loading();
         document.getElementById("pagecounter").innerHTML = "Side " + page;
     }
 }
@@ -151,6 +151,16 @@ function search() {
     treff = false;
     page = 1;
     getData();
-    document.getElementById("treffut").innerHTML = "Vennligst vent, siden laster";
+    loading();
     document.getElementById("pagecounter").innerHTML = "Side " + page;
+}
+
+function loading() {
+    document.getElementById("treffut").innerHTML = " ";
+    spinner = document.createElement("i");
+    spinner.className = "fa fa-spinner fa-2x";
+    spinner.id = "spinner";
+    spinner.ariaHidden = true;
+    document.getElementById("treffut").appendChild(spinner);
+
 }
