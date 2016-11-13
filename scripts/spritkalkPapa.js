@@ -1,6 +1,8 @@
 //https://www.vinmonopolet.no/medias/sys_master/products/products/hbc/hb0/8834253127710/produkter.csv
 var page = 1;
 var perPage = 20;
+var totaltreff = 0;
+var totalPage = 0;
 var treff = false;
 
 document.getElementById("btn").onclick = search;
@@ -26,12 +28,11 @@ function createlink() {
 }
 
 function getData() {
-
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = statusforandring;
     xmlhttp.open("GET", "../scripts/getfile.php", true);
     xmlhttp.send();
-
+    totaltreff = 0;
     while (document.getElementById("output").firstChild) {
         document.getElementById("output").removeChild(document.getElementById("output").firstChild);
     }
@@ -59,6 +60,7 @@ function statusforandring() {
 
                 if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) && alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >= parseFloat(row.data[0].Alkohol) && (varetype === row.data[0].Varetype || varetype === "alle")) {
                     treff = true;
+                    totaltreff++;
                     if ((counter >= perPage * (page - 1) && counter < perPage * page)) {
                         produktDiv = document.createElement('div');
                         produktDiv.className = row.data[0].Varenummer;
@@ -88,14 +90,16 @@ function statusforandring() {
                         document.getElementById(row.data[0].Varenummer).appendChild(produktB);
 
                     } else if (counter >= perPage * (page - 1)) {
-                        parser.abort();
+                        //parser.abort();
                     }
                     counter++;
                 }
             },
             complete: function() {
                 console.log("All done!");
-                document.getElementById("pagecounter").innerHTML = "Side " + page;
+                totalPage = (totaltreff / perPage);
+                document.getElementById("pagecounter").innerHTML = "Side " + page + " av " + Math.ceil(totalPage);
+                document.getElementById("treffut").innerHTML = "Ditt søk ga " + totaltreff + " treff";
                 if (treff == false) {
                     produktDiv = document.createElement('div');
                     produktDiv.innerHTML = "<h1> Ditt søk ga ingen treff</h1>";
@@ -134,9 +138,11 @@ function prevPage() {
 }
 
 function nextPage() {
-    page++;
-    getData();
-    document.getElementById("pagecounter").innerHTML = "Side " + page;
+    if (page < totalPage) {
+        page++;
+        getData();
+        document.getElementById("pagecounter").innerHTML = "Side " + page;
+    }
 }
 
 function search() {
