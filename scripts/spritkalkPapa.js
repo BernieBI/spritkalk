@@ -3,7 +3,6 @@ var page = 1;
 var perPage = 20;
 var totaltreff = 0;
 var totalPage = 0;
-var treff = false;
 
 document.getElementById("btn").onclick = search;
 
@@ -59,7 +58,6 @@ function statusforandring() {
             step: function(row, parser) {
 
                 if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) && alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >= parseFloat(row.data[0].Alkohol) && (varetype === row.data[0].Varetype || varetype === "alle")) {
-                    treff = true;
                     totaltreff++;
                     if ((counter >= perPage * (page - 1) && counter < perPage * page)) {
                         produktDiv = document.createElement('div');
@@ -100,12 +98,7 @@ function statusforandring() {
                 totalPage = (totaltreff / perPage);
                 document.getElementById("pagecounter").innerHTML = "Side " + page + " av " + Math.ceil(totalPage);
                 document.getElementById("treffut").innerHTML = "Ditt søk ga " + totaltreff + " treff";
-                if (treff == false) {
-                    produktDiv = document.createElement('div');
-                    produktDiv.innerHTML = "<h1> Ditt søk ga ingen treff</h1>";
-                    document.getElementById("output").appendChild(produktDiv);
 
-                }
             }
         });
 
