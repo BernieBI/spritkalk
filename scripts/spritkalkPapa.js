@@ -133,6 +133,7 @@ function prevPage() {
     if (page != 1) {
         page--;
         getData();
+        document.getElementById("treffut").innerHTML = "Vennligst vent mens siden laster";
         document.getElementById("pagecounter").innerHTML = "Side " + page;
     }
 }
@@ -141,6 +142,7 @@ function nextPage() {
     if (page < totalPage) {
         page++;
         getData();
+        document.getElementById("treffut").innerHTML = "Vennligst vent mens siden laster";
         document.getElementById("pagecounter").innerHTML = "Side " + page;
     }
 }
@@ -149,5 +151,7 @@ function search() {
     treff = false;
     page = 1;
     getData();
+    document.getElementById("treffut").innerHTML = "Vennligst vent mens siden laster";
+
     document.getElementById("pagecounter").innerHTML = "Side " + page;
 }
