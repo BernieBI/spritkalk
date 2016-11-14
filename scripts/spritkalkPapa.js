@@ -1,4 +1,6 @@
-//https://www.vinmonopolet.no/medias/sys_master/products/products/hbc/hb0/8834253127710/produkter.csv
+
+//vi har fått tillatelse fra Tom Heine til å bruke CSV istedenfor JSON eller XML
+
 var page = 1;
 var perPage = 20;
 var totaltreff = 0;
