@@ -43,9 +43,8 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 9em;
+    margin-top: 5em;
     margin-bottom: 0;
-    background-color: white;
     justify-content: center;
     align-items: center;
     align-self: center;
@@ -56,8 +55,6 @@ body{
     font-size: 1.2em;
     border-radius: 5px 5px 5px 5px;
 }
-
-
 select {
     margin: 0em 1em 0em 0.5em;
 
@@ -103,7 +100,6 @@ select {
 #filter:hover {
   margin-top: 3em;
 }
-
 
 .filterdel{
   display: flex;
@@ -151,6 +147,7 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 .undersection {
     width: 90%;
+    min-height: 90vh;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -224,8 +221,6 @@ h3 {
     margin-right: 0.5em;
     margin-bottom: -0.5em;
 }
-
-
 
 nav {
     display: flex;
