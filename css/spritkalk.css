@@ -290,7 +290,7 @@ h1{
   margin-right: 5%;
 }
 #filter{
-  margin-top: -17.15em;
+  margin-top: -20.45em;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -307,7 +307,7 @@ h1{
 }
 
 #filter:hover {
-  margin-top: 3em;
+  margin-top: 0em;
 }
 #btn:hover {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
