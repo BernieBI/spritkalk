@@ -22,8 +22,10 @@ displayalk();
 getData();
 
 function createlink() {
-    var link = "https://www.vinmonopolet.no/p/" + event.target.className;
-    document.location = link;
+    if (event.target.id != "output") {
+        var link = "https://www.vinmonopolet.no/p/" + event.target.className;
+        document.location = link;
+    }
 }
 
 function getData() {
