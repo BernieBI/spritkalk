@@ -16,8 +16,9 @@
     </header>
     <main>
         <section id="filter">
-            <h2>Kategori</h2>
-            <select id="varetype">
+            <article class="filterdel">
+                <h2>Kategori</h2>
+                <select id="varetype">
             <option value="alle">Vis alle</option>
             <option value="Rødvin">Rødvin</option>
             <option value="Hvitvin">Hvitvin</option>
@@ -49,15 +50,33 @@
             <option value="Whisky">Whisky</option>
 
           </select>
-            <h2>Alkoholnivå</h2>
-            <span class="filtertext">Fra</span> &nbsp;<input type="range" id="alkFrom" min="0" max="60" value="0"><span class="filtertext" id="alkFromNum">0</span>
-            <span class="filtertext">Til</span> &nbsp;<input type="range" id="alkTo" min="0" max="60" value="60"><span class="filtertext" id="alkToNum">0</span>
-            <h2>Pris</h2>
-            <span class="filtertext">Fra</span> &nbsp;<input type="range" id="priceFrom" value="0" min="0" max="35000"><span class="filtertext" id="priceFromNum">0</span>
-            <span class="filtertext">Til</span> &nbsp;<input type="range" id="priceTo" value="35000" min="0" max="35000"><span class="filtertext" id="priceToNum">0</span>
-        </section>
+            </article>
 
-        <button id="btn">SØK</button>
+            <article class="filterdel">
+                <h2>Alkoholnivå</h2>
+                <div>
+                    <span class="filtertext">Fra </span><span class="filtertext" id="alkFromNum">0</span>
+                </div>
+                <input type="range" id="alkFrom" min="0" max="60" value="0">
+                <div>
+                    <span class="filtertext">Til </span><span class="filtertext" id="alkToNum">0</span>
+                </div>
+                <input type="range" id="alkTo" min="0" max="60" value="60">
+            </article>
+            <article class="filterdel">
+                <h2>Pris</h2>
+                <div>
+                    <span class="filtertext">Fra </span><span class="filtertext" id="priceFromNum">0</span>
+                </div><input type="range" id="priceFrom" value="0" min="0" max="35000">
+
+                <div>
+                    <span class="filtertext">Til </span><span class="filtertext" id="priceToNum">0</span>
+                </div> <input type="range" id="priceTo" value="35000" min="0" max="35000">
+
+            </article>
+
+            <button id="btn">SØK</button>
+        </section>
         <section class="undersection">
             <article id="treffut"><i class="fa fa-spinner fa-2x" id="spinner" aria-hidden="true"></i></article>
             <article id="output"> </article>
