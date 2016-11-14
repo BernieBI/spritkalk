@@ -73,7 +73,7 @@ select {
 #filter {
   display: flex;
   position: fixed;
-  margin-top: 0;
+  margin-top: -4.7em;
   flex-direction: row;
   flex-grow: 0;
   height: auto;
@@ -87,7 +87,7 @@ select {
 }
 #btn {
   position: fixed;
-  margin-top: 10.5em;
+  margin-top: 10.1em;
   background-color: black;
   border: none;
   width: 100%;
@@ -99,6 +99,11 @@ select {
   cursor: pointer;
   transition: 0.5s;
 }
+
+#filter:hover {
+  margin-top: 3em;
+}
+
 
 .filterdel{
   display: flex;
@@ -153,7 +158,6 @@ input[type=range]::-webkit-slider-runnable-track {
     background-color: #f2f2f2;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
-margin-top: 3.3em;
     margin-bottom: 0.1em;
 }
 
@@ -162,7 +166,6 @@ margin-top: 3.3em;
     position: fixed;
     display: flex;
     margin: 0;
-    margin-top: -3.3em;
     padding-top: 10px;
     flex-wrap: nowrap;
     align-items: center;
@@ -282,15 +285,23 @@ footer {
 }
 
   @media (max-width: 1024px) {
-
+*{
+  font-size: 1.05em;
+}
+.undersection {
+    width: 100%;
+}
 #mainheader{
   justify-content: flex-end;
+}
+#output div{
+width: 40%;
 }
 h1{
   margin-right: 5%;
 }
 #filter{
-  margin-top: -20.45em;
+  margin-top: -15.5em;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -300,14 +311,16 @@ h1{
   width: 70%;
 }
 #btn{
-  margin-top: 14em;
+  margin-top: 10.5em;
   transition: 0.5s;
   width: 100%;
   margin-left: 0;
 }
-
+input[type=range]::-webkit-slider-thumb {
+margin-top: -0.4em;
+}
 #filter:hover {
-  margin-top: 0em;
+  margin-top: 3em;
 }
 #btn:hover {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
