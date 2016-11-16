@@ -1,4 +1,3 @@
-
 //vi har fått tillatelse fra Tom Heine til å bruke CSV istedenfor JSON eller XML
 
 var page = 1;
@@ -19,8 +18,15 @@ document.getElementById("alkTo").oninput = displayalk;
 document.getElementById("priceFrom").oninput = displayprice;
 document.getElementById("priceTo").oninput = displayprice;
 
+document.getElementById("LpriceFrom").oninput = displayLprice;
+document.getElementById("LpriceTo").oninput = displayLprice;
+
+
 displayprice();
+displayLprice();
+
 displayalk();
+
 getData();
 
 function createlink() {
@@ -48,6 +54,8 @@ function statusforandring() {
         var data = xmlhttp.responseText;
         var priceto = parseFloat(document.getElementById("priceTo").value);
         var pricefrom = parseFloat(document.getElementById("priceFrom").value);
+        var Lpriceto = parseFloat(document.getElementById("LpriceTo").value);
+        var Lpricefrom = parseFloat(document.getElementById("LpriceFrom").value);
         var alkto = parseFloat(document.getElementById("alkTo").value);
         var alkfrom = parseFloat(document.getElementById("alkFrom").value);
         var varetype = document.getElementById("varetype").value
@@ -61,7 +69,10 @@ function statusforandring() {
             header: true,
             step: function(row, parser) {
 
-                if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) && alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >= parseFloat(row.data[0].Alkohol) && (varetype === row.data[0].Varetype || varetype === "alle")) {
+                if (pricefrom <= parseFloat(row.data[0].Pris) && priceto >= parseFloat(row.data[0].Pris) &&
+                    alkfrom <= parseFloat(row.data[0].Alkohol) && alkto >= parseFloat(row.data[0].Alkohol) &&
+                    Lpricefrom <= parseFloat(row.data[0].Literpris) && Lpriceto >= parseFloat(row.data[0].Literpris) &&
+                    (varetype === row.data[0].Varetype || varetype === "alle")) {
                     totaltreff++;
                     if ((counter >= perPage * (page - 1) && counter < perPage * page)) {
                         produktDiv = document.createElement('div');
@@ -83,7 +94,7 @@ function statusforandring() {
                         produktP = document.createElement('p');
                         produktP.className = row.data[0].Varenummer;
 
-                        produktP.innerHTML = "- Kr " + parseFloat(row.data[0].Pris) + ",- <br />- " + row.data[0].Alkohol + "% Vol. <br />- " + row.data[0].Volum + "l";
+                        produktP.innerHTML = "- Kr " + parseFloat(row.data[0].Pris) + ",- <br />- " + row.data[0].Alkohol + "% Vol. <br />- " + row.data[0].Volum + "l <br />- " + row.data[0].Literpris + " Kr/l";
                         document.getElementById(row.data[0].Varenummer).appendChild(produktP);
 
                         produktB = document.createElement('b');
@@ -124,6 +135,14 @@ function displayprice() {
 
     document.getElementById("priceFromNum").innerHTML = pricefrom + " kr";
     document.getElementById("priceToNum").innerHTML = priceto + " kr";
+}
+
+function displayLprice() {
+    var pricefrom = document.getElementById("LpriceFrom").value;
+    var priceto = document.getElementById("LpriceTo").value;
+
+    document.getElementById("LpriceFromNum").innerHTML = pricefrom + " kr";
+    document.getElementById("LpriceToNum").innerHTML = priceto + " kr";
 }
 
 function prevPage() {
