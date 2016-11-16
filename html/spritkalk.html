@@ -16,7 +16,7 @@
     </header>
     <main>
         <section id="filter">
-            <article class="filterdel">
+            <article class="filterdelselect">
                 <h2>Kategori</h2>
                 <select id="varetype">
             <option value="alle">Vis alle</option>
@@ -72,6 +72,17 @@
                 <div>
                     <span class="filtertext">Til </span><span class="filtertext" id="priceToNum">0</span>
                 </div> <input type="range" id="priceTo" value="35000" min="0" max="35000">
+            </article>
+
+            <article class="filterdel">
+                <h2>Literpris</h2>
+                <div>
+                    <span class="filtertext">Fra </span><span class="filtertext" id="LpriceFromNum">0</span>
+                </div><input type="range" id="LpriceFrom" value="0" min="44" max="35000">
+
+                <div>
+                    <span class="filtertext">Til </span><span class="filtertext" id="LpriceToNum">0</span>
+                </div> <input type="range" id="LpriceTo" value="93000" min="44" max="93000">
 
             </article>
 

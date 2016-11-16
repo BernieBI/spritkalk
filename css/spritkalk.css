@@ -24,6 +24,7 @@ body {
     flex-wrap: wrap;
     margin auto;
     justify-content: center;
+    margin-bottom: 1em;
 }
 
 #spinner {
@@ -101,15 +102,6 @@ select {
     transition: 0.5s;
 }
 
-@-moz-document url-prefix() {
-    #btn {
-        margin: 12.2em -99.5%;
-    }
-    #filter {
-        margin-top: -6.5em;
-    }
-}
-
 #filter:hover {
     margin-top: 3em;
 }
@@ -119,7 +111,18 @@ select {
     flex-wrap: nowrap;
     flex-direction: column;
     height: auto;
-    width: 30%;
+    width: 25%;
+    padding: 0% 1.5% 0% 1.5%;
+    text-align: left;
+}
+
+.filterdelselect {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: auto;
+    width: 10%;
+    min-width: 15em;
     padding: 0% 1.5% 0% 1.5%;
     text-align: left;
 }
@@ -228,6 +231,7 @@ p {
 }
 
 b {
+    margin-top: -0.2em;
     margin-left: 1.5em;
 }
 
@@ -293,6 +297,49 @@ footer {
     margin-top: 0em;
 }
 
+@-moz-document url-prefix() {
+    @media (min-width: 1800px) {
+        #btn {
+            margin: 12.2em -98.5%;
+        }
+        #filter {
+            margin-top: -6.5em;
+        }
+    }
+    @media (max-width: 1800px) {
+        #btn {
+            margin: 12.2em -100%;
+        }
+        #filter {
+            margin-top: -6.5em;
+        }
+    }
+}
+
+@media (min-width: 3000px) {
+    #output div {
+        font-size: 1.3em;
+    }
+    button {
+        font-size: 1.3em;
+    }
+    nav {
+        height: auto;
+        font-size: 1.3em;
+    }
+    #btn {
+        margin-top: 6.3em;
+    }
+    #filter {
+        font-size: 1.3em;
+        height: auto;
+        margin-top: -5.3em;
+    }
+    #treffut {
+        margin-top: 7em;
+    }
+}
+
 @media (max-width: 1024px) {
     * {
         font-size: 1.05em;
@@ -310,7 +357,7 @@ footer {
         margin-right: 5%;
     }
     #filter {
-        margin-top: -15.5em;
+        margin-top: -23.9em;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -320,7 +367,7 @@ footer {
         width: 70%;
     }
     #btn {
-        margin-top: 10.5em;
+        margin-top: 14.6em;
         transition: 0.5s;
         width: 100%;
         margin-left: 0;
@@ -346,13 +393,7 @@ footer {
             margin: 0.9em -50%;
         }
         #filter {
-            margin-top: -21.1em;
+            margin-top: -31.3em;
         }
-    }
-}
-
-@media (min-width: 3500px) {
-    #btn {
-        margin-top: 14.3;
     }
 }
